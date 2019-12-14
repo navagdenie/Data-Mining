@@ -6,7 +6,7 @@ from jobparser.items import JobparserItem
 class SjruSpider(scrapy.Spider):
     name = 'sjru'
     allowed_domains = ['superjob.ru']
-    start_urls = ['https://www.superjob.ru/vacancy/search/?keywords=python']
+    start_urls = ['https://www.superjob.ru/vacancy/search/?keywords=python&geo%5Bc%5D%5B0%5D=1']
 
     def parse(self, response:HtmlResponse):
         link_next = response.xpath('//a[@rel="next"][last()]/@href').extract_first()
